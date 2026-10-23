@@ -142,8 +142,6 @@ void VentanaProductos::mostrarMensaje(const QString& texto) {
 	lblMensaje->setText(texto);
 }
 
-// Busca el producto escrito en el formulario y verifica que este activo.
-// Si hay un problema muestra el error y devuelve nullptr.
 Producto* VentanaProductos::productoActivoDelFormulario() {
 	std::string codigo = txtCodigo->text().trimmed().toStdString();
 	if (codigo.empty()) {
