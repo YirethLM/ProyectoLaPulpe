@@ -8,8 +8,6 @@
 #include "GestorProductos.h"
 #include "AlmacenProductos.h"
 
-// Pantalla de productos e inventario. Solo maneja la interfaz:
-// las reglas estan en GestorProductos y los archivos en AlmacenProductos.
 class VentanaProductos : public QWidget {
 private:
 	GestorProductos gestor;
