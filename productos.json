@@ -1,0 +1,30 @@
+[
+    {
+        "activo": true,
+        "codigo": "P001",
+        "existencia": 20,
+        "nombre": "Arroz",
+        "precio": 1500
+    },
+    {
+        "activo": true,
+        "codigo": "P002",
+        "existencia": 15,
+        "nombre": "Frijoles",
+        "precio": 1300
+    },
+    {
+        "activo": true,
+        "codigo": "P003",
+        "existencia": 30,
+        "nombre": "Azucar",
+        "precio": 950
+    },
+    {
+        "activo": true,
+        "codigo": "P004",
+        "existencia": 12,
+        "nombre": "Aceite",
+        "precio": 2200
+    }
+]
