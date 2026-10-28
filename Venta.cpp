@@ -1,6 +1,6 @@
 #include "Venta.h"  //23/10/26
 using namespace std;
-LineaVenta::LineaVenta(string codigo,string nombre),double precioUsado, int cantidad)
+LineaVenta::LineaVenta(string codigo, string nombre, double precioUsado, int cantidad)
 	:codigo(codigo), nombre(nombre), precioUsado(precioUsado), cantidad(cantidad){}
 	//constructor de la linea de venta
 	//inicializa los atributos con los valores proporcionados:joz1303

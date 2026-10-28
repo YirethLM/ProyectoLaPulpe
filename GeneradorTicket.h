@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include "Venta.h"
 #include <vector>
 using namespace std;
 //24/10/26
@@ -12,7 +13,7 @@ public:
 	//destructor virtual para permitir la destruccion correcta de objetos derivados:joz1303
 
 	virtual string generar(const Venta& venta) const = 0;
-	string extenison() const = 0;  //virtual al llamar (generar) ejecuta la version de clase hija (polimorfismo) :joz1303
+	virtual string extension() const = 0;  //virtual al llamar (generar) ejecuta la version de clase hija (polimorfismo) :joz1303
 
 };
 

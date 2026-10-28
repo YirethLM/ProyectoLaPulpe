@@ -13,12 +13,17 @@ private: //atributos de la linea de venta
 	int cantidad;
 
 
+
 public:
 	LineaVenta(string codigo, string nombre, double precioUsado, int cantidad);
 
-
-
+	string getCodigo() const;
+	string getNombre() const;
+	double getPrecioUsado() const;
+	int getCantidad() const;
+	double getSubtotal() const;
 };
+
 
 //clase para lo que serian las ven
 class Venta {
@@ -31,7 +36,7 @@ private:
 public:
 	Venta(int id, string fecha, double pagado);
 
-	Void agregarLineaLinea(const LineaVenta& linea);
+	void agregarLinea(const LineaVenta& linea);
 
 	int getId() const;  //get para leer atributos privados  tomando nota y usando el encapsolamiento esta nota la hice yo:Jjzo13
 	string getFecha() const;
