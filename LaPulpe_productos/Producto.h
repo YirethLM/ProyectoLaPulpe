@@ -18,7 +18,7 @@ public:
 	int getExistencia() const;
 	bool getActivo() const;
 
-	void agregarExistencia(int cantidad);
+	bool agregarExistencia(int cantidad);
 	bool rebajarExistencia(int cantidad);
 	void desactivar();
 	void setPrecio(double nuevoPrecio);

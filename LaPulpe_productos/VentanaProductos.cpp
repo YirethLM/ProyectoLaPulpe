@@ -6,6 +6,7 @@
 #include <QMessageBox>
 #include <QFile>
 #include <QString>
+#include <cmath>
 
 VentanaProductos::VentanaProductos(const std::string& ruta) : rutaArchivo(ruta) {
 	crearPantalla();
@@ -172,7 +173,7 @@ void VentanaProductos::agregarProducto() {
 	bool existenciaOk = false;
 	double precio = txtPrecio->text().toDouble(&precioOk);
 	int existencia = txtExistencia->text().toInt(&existenciaOk);
-	if (!precioOk || precio <= 0) {
+	if (!precioOk || !std::isfinite(precio) || precio <= 0) {
 		mostrarError("El precio debe ser un numero mayor que cero.");
 		return;
 	}
@@ -211,8 +212,10 @@ void VentanaProductos::modificarProducto() {
 	}
 
 	std::string codigo = p->getCodigo();
-	gestor.modificarNombre(codigo, nombre);
-	gestor.modificarPrecio(codigo, precio);
+	if (!gestor.modificarNombre(codigo, nombre) || !gestor.modificarPrecio(codigo, precio)) {
+		mostrarError("No se pudo modificar el producto.");
+		return;
+	}
 	guardarDatos();
 	mostrarTabla();
 	mostrarMensaje("Producto modificado.");
@@ -229,7 +232,10 @@ void VentanaProductos::ingresarMercaderia() {
 		return;
 	}
 
-	gestor.ingresaMerca(p->getCodigo(), cantidad);
+	if (!gestor.ingresaMerca(p->getCodigo(), cantidad)) {
+		mostrarError("No se pudo ingresar mercaderia. Revise la cantidad.");
+		return;
+	}
 	guardarDatos();
 	mostrarTabla();
 	txtCantidad->clear();
@@ -244,7 +250,10 @@ void VentanaProductos::desactivarProducto() {
 		this, "Desactivar", "Desea desactivar el producto " + QString::fromStdString(p->getNombre()) + "?");
 	if (respuesta != QMessageBox::Yes) return;
 
-	gestor.desactivar(p->getCodigo());
+	if (!gestor.desactivar(p->getCodigo())) {
+		mostrarError("No se pudo desactivar el producto.");
+		return;
+	}
 	guardarDatos();
 	mostrarTabla();
 	mostrarMensaje("Producto desactivado.");
