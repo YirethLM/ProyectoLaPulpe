@@ -1,5 +1,5 @@
 #include <QApplication>
-#include "VentanaProductos.h"
+#include "LaPulpe_productos/VentanaProductos.h"
 
 int main(int argc, char* argv[]) {
 	QApplication app(argc, argv);
