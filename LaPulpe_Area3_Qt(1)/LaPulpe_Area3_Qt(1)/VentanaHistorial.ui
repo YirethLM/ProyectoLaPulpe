@@ -76,6 +76,23 @@
 				background-color: #FFFFFF;
 				}
 
+				QPushButton {
+				background-color: #E8F4EC;
+				color: #20573B;
+				border: 1px solid #C7DCCF;
+				border-radius: 8px;
+				padding: 9px 14px;
+				font-weight: bold;
+				}
+
+				QPushButton:hover {
+				background-color: #D7EEDF;
+				}
+
+				QPushButton:pressed {
+				background-color: #CBEAD7;
+				}
+
 				QTableWidget#tablaHistorial {
 				background-color: #FFFFFF;
 				alternate-background-color: #F3F9F5;
@@ -211,6 +228,35 @@
 										<bool>true</bool>
 									</property>
 								</widget>
+							</item>
+
+							<item>
+								<layout class="QHBoxLayout" name="layoutAcciones">
+									<property name="spacing">
+										<number>10</number>
+									</property>
+									<item>
+										<widget class="QPushButton" name="botonActualizar">
+											<property name="text">
+												<string>Actualizar historial</string>
+											</property>
+										</widget>
+									</item>
+									<item>
+										<widget class="QPushButton" name="botonTicketTxt">
+											<property name="text">
+												<string>Comprobante TXT</string>
+											</property>
+										</widget>
+									</item>
+									<item>
+										<widget class="QPushButton" name="botonTicketHtml">
+											<property name="text">
+												<string>Comprobante HTML</string>
+											</property>
+										</widget>
+									</item>
+								</layout>
 							</item>
 						</layout>
 					</widget>

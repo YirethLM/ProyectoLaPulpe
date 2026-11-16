@@ -27,6 +27,12 @@ private:
     // Gestor que administra el historial de ventas :joz1303
     GestorHistorial gestor{ "ventas.json" };
 
-    // Actualiza la tabla y permite filtrar ventas por ID :joz1303
+    // Recarga el archivo JSON sin interrumpir la ventana :joz1303
+    void cargarHistorial();
+
+    // filtro: ID exacto buscado; una cadena vacía muestra todas las ventas :joz1303
     void actualizarTabla(const QString& filtro);
+
+    // formatoHtml: true genera HTML; false genera TXT y abre el archivo creado :joz1303
+    void generarComprobante(bool formatoHtml);
 };
