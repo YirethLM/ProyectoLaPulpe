@@ -87,10 +87,12 @@ void VentanaProductos::cargarDatos() {
 	gestor.setProductos(lista);
 }
 
-void VentanaProductos::guardarDatos() {
+bool VentanaProductos::guardarDatos() {
 	if (!almacen.guardar(rutaArchivo, gestor.getProductos())) {
 		mostrarError("No se pudo guardar el archivo de productos.");
+		return false;
 	}
+	return true;
 }
 
 void VentanaProductos::mostrarTabla() {
@@ -190,8 +192,8 @@ void VentanaProductos::agregarProducto() {
 		mostrarError("No se pudo agregar el producto.");
 		return;
 	}
-	guardarDatos();
 	mostrarTabla();
+	if (!guardarDatos()) return;
 	mostrarMensaje("Producto agregado.");
 }
 
@@ -216,8 +218,8 @@ void VentanaProductos::modificarProducto() {
 		mostrarError("No se pudo modificar el producto.");
 		return;
 	}
-	guardarDatos();
 	mostrarTabla();
+	if (!guardarDatos()) return;
 	mostrarMensaje("Producto modificado.");
 }
 
@@ -236,8 +238,8 @@ void VentanaProductos::ingresarMercaderia() {
 		mostrarError("No se pudo ingresar mercaderia. Revise la cantidad.");
 		return;
 	}
-	guardarDatos();
 	mostrarTabla();
+	if (!guardarDatos()) return;
 	txtCantidad->clear();
 	mostrarMensaje("Mercaderia ingresada.");
 }
@@ -254,7 +256,7 @@ void VentanaProductos::desactivarProducto() {
 		mostrarError("No se pudo desactivar el producto.");
 		return;
 	}
-	guardarDatos();
 	mostrarTabla();
+	if (!guardarDatos()) return;
 	mostrarMensaje("Producto desactivado.");
 }

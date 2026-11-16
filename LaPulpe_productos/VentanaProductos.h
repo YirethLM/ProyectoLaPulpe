@@ -25,7 +25,7 @@ private:
 
 	void crearPantalla();
 	void cargarDatos();
-	void guardarDatos();
+	bool guardarDatos();
 	void mostrarTabla();
 	void limpiarFormulario();
 	void seleccionarFila(int fila);
