@@ -140,7 +140,10 @@ void VentanaHistorial::actualizarTabla(const QString& filtro)
     QFile file(ruta);
     if (!file.open(QIODevice::ReadOnly)) return;
     
-    QJsonArray ventasArray = QJsonDocument::fromJson(file.readAll()).array();
+    QJsonDocument documento = QJsonDocument::fromJson(file.readAll());
+    QJsonArray ventasArray = documento.isObject()
+        ? documento.object().value("ventas").toArray()
+        : documento.array();
     file.close();
 
     QColor colorTexto("#1E293B");

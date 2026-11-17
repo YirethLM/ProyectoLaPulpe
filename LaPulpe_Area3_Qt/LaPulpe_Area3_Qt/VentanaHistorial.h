@@ -2,8 +2,12 @@
 #pragma once
 
 #include <QMainWindow>
+#include <QObject>
+#include <QLabel>
 #include <QString>
-#include "../../GestorHistorial.h"
+#include "GestorHistorial.h"
+#include <QPushButton>
+#include <QVBoxLayout>
 
 // Formulario creado con Qt Designer :joz1303
 namespace Ui {
@@ -13,6 +17,7 @@ namespace Ui {
 // Ventana para consultar el historial de ventas :joz1303
 class VentanaHistorial : public QMainWindow
 {
+    Q_OBJECT
 public:
     // Constructor de la ventana :joz1303
     explicit VentanaHistorial(QWidget* parent = nullptr);
@@ -20,15 +25,25 @@ public:
     // Destructor para liberar la interfaz :joz1303
     ~VentanaHistorial() override;
 
+signals:
+    void volverSolicitado();
+
+protected:
+    void showEvent(QShowEvent* event) override;
+
 private:
-    // Formulario visual de Qt Designer :joz1303
-    Ui::MainWindow* ui;
+        // Formulario visual de Qt Designer :joz1303
+        Ui::MainWindow* ui;
 
-    // Gestor que administra el historial de ventas :joz1303
-    GestorHistorial gestor{ "ventas.json" };
+        // Gestor que administra el historial de ventas :joz1303
+        GestorHistorial gestor{ "ventas.json" };
+        QLabel* lblTotalHoy = nullptr;
 
-    // Recarga el archivo JSON sin interrumpir la ventana :joz1303
-    void cargarHistorial();
+        void mostrarFacturaSeleccionada();
+
+        // Recarga el archivo JSON sin interrumpir la ventana :joz1303
+        void cargarHistorial();
+
 
     // filtro: ID exacto buscado; una cadena vacía muestra todas las ventas :joz1303
     void actualizarTabla(const QString& filtro);

@@ -1,0 +1,23 @@
+[
+    {
+        "activo": true,
+        "contrasena": "1234",
+        "nombre": "Ana Rodríguez",
+        "rol": "Administrador",
+        "usuario": "admin"
+    },
+    {
+        "activo": true,
+        "contrasena": "cajero",
+        "nombre": "Carlos Mora",
+        "rol": "Cajero",
+        "usuario": "cajero"
+    },
+    {
+        "activo": true,
+        "contrasena": "1234",
+        "nombre": "William",
+        "rol": "Administrador",
+        "usuario": "william"
+    }
+]

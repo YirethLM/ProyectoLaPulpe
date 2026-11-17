@@ -32,7 +32,10 @@ void VistaInicio::actualizarContadores() {
     QString rutaVentas = Config::getJsonPath("ventas.json");
     QFile fileVentas(rutaVentas);
     if (fileVentas.open(QIODevice::ReadOnly)) {
-        QJsonArray ventasArray = QJsonDocument::fromJson(fileVentas.readAll()).array();
+        QJsonDocument documento = QJsonDocument::fromJson(fileVentas.readAll());
+        QJsonArray ventasArray = documento.isObject()
+            ? documento.object().value("ventas").toArray()
+            : documento.array();
         QString hoy = QDate::currentDate().toString("dd/MM/yyyy");
         for (const QJsonValue& val : ventasArray) {
             QJsonObject venta = val.toObject();
