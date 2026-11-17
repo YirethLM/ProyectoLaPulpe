@@ -159,7 +159,7 @@ Se aplican principios de programación orientada a objetos, separación de respo
 
 ## 📚 Propósito académico
 
-Este proyecto fue desarrollado como parte del curso Programación I de la Universidad Nacional de Costa Rica.
+Este proyecto fue desarrollado como parte del curso Programación 1.
 
 Su propósito es aplicar los conocimientos adquiridos en programación orientada a objetos, desarrollo de interfaces, persistencia de datos y trabajo colaborativo.
 
