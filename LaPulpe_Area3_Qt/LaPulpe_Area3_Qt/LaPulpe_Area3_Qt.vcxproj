@@ -96,14 +96,48 @@
     <ClCompile Include="NavegadorPantallas.cpp" />
     <ClCompile Include="VentanaPrincipal.cpp" />
     <ClCompile Include="VistaInicio.cpp" />
-  </ItemGroup>
-  <ItemGroup>
+    <ClCompile Include="VentanaHistorial.cpp" />
+    <ClCompile Include="VistaInventario.cpp" />
+    <ClCompile Include="GestorProductos.cpp" />
+    <ClCompile Include="AlmacenProductos.cpp" />
+    <ClCompile Include="Producto.cpp" />
+    <ClCompile Include="GestorHistorial.cpp" />
+    <ClCompile Include="AlmacenVentas.cpp" />
+    <ClCompile Include="Venta.cpp" />
+    <ClCompile Include="TicketHtml.cpp" />
+    <ClCompile Include="TicketTxt.cpp" />
+    <ClCompile Include="VistaVentas.cpp" />
+    <ClCompile Include="FacturaDialog.cpp" />
+    <ClCompile Include="VistaLogin.cpp" />
+    <ClCompile Include="VistaUsuarios.cpp" />
+    </ItemGroup>
+    <ItemGroup>
     <ClInclude Include="Estilos.h" />
     <ClInclude Include="NavegadorPantallas.h" />
+    <ClInclude Include="GestorProductos.h" />
+    <ClInclude Include="AlmacenProductos.h" />
+    <ClInclude Include="Producto.h" />
+    <ClInclude Include="GestorHistorial.h" />
+    <ClInclude Include="AlmacenVentas.h" />
+    <ClInclude Include="Venta.h" />
+    <ClInclude Include="TicketHtml.h" />
+    <ClInclude Include="TicketTxt.h" />
+    <ClInclude Include="GeneradorTicket.h" />
     <QtMoc Include="VentanaPrincipal.h" />
     <QtMoc Include="VistaInicio.h" />
     <QtMoc Include="VistaSeccion.h" />
-  </ItemGroup>
+    <QtMoc Include="VistaInventario.h" />
+    <QtMoc Include="VistaVentas.h" />
+    <QtMoc Include="VentanaHistorial.h" />
+    <QtMoc Include="FacturaDialog.h" />
+    <QtMoc Include="VistaLogin.h" />
+    <QtMoc Include="VistaUsuarios.h" />
+    </ItemGroup>
+
+    <ItemGroup>
+    <QtUic Include="VentanaHistorial.ui" />
+    </ItemGroup>
+
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
     <Import Project="$(QtMsBuild)\qt.targets" />

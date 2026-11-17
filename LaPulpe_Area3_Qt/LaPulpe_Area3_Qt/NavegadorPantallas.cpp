@@ -21,10 +21,25 @@ void NavegadorPantallas::mostrarVista(const QString& nombre) {
 
     Rol rolRequerido = permisos[nombre];
 
-    // Lógica básica de permisos
-    if (rolRequerido == Rol::Ninguno || rolActualUsuario == Rol::Administrador || rolActualUsuario == rolRequerido) {
+    // Acceso total para Administrador
+    if (rolActualUsuario == Rol::Administrador) {
         contenedor->setCurrentWidget(vistas[nombre]);
-    } else {
-        QMessageBox::warning(contenedor, "Acceso Denegado", "No tiene permisos para acceder a esta pantalla.");
+        return;
     }
+    
+    // Acceso para Cajero
+    if (rolActualUsuario == Rol::Cajero) {
+        if (nombre == "Ventas" || nombre == "Historial" || nombre == "Inicio") {
+            contenedor->setCurrentWidget(vistas[nombre]);
+            return;
+        }
+    }
+
+    // Acceso público (Inicio)
+    if (rolRequerido == Rol::Ninguno) {
+        contenedor->setCurrentWidget(vistas[nombre]);
+        return;
+    }
+
+    QMessageBox::warning(contenedor, "Acceso Denegado", "No tiene permisos para acceder a esta pantalla.");
 }
