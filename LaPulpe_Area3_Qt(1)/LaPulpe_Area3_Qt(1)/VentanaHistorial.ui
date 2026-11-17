@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+	<class>MainWindow</class>
+	<widget class="QMainWindow" name="MainWindow">
+		<property name="geometry">
+			<rect>
+				<x>0</x>
+				<y>0</y>
+				<width>950</width>
+				<height>650</height>
+			</rect>
+		</property>
+		<property name="windowTitle">
+			<string>La Pulpe - Historial de ventas</string>
+		</property>
+
+		<!-- Estilo visual de La Pulpe :joz1303 -->
+		<property name="styleSheet">
+			<string notr="true">
+				QMainWindow {
+				background-color: #F2F6F3;
+				}
+
+				QWidget#centralwidget {
+				background-color: #F2F6F3;
+				}
+
+				QFrame#encabezado {
+				background-color: #176B45;
+				border-radius: 16px;
+				}
+
+				QLabel#tituloPrincipal {
+				color: #FFFFFF;
+				font-size: 26px;
+				font-weight: bold;
+				}
+
+				QLabel#subtitulo {
+				color: #D7F5E3;
+				font-size: 13px;
+				}
+
+				QFrame#panelBusqueda,
+				QFrame#panelTabla {
+				background-color: #FFFFFF;
+				border: 1px solid #DFE9E2;
+				border-radius: 14px;
+				}
+
+				QLabel#tituloBusqueda,
+				QLabel#tituloTabla {
+				color: #204F38;
+				font-size: 16px;
+				font-weight: bold;
+				border: none;
+				}
+
+				QLabel#descripcionBusqueda {
+				color: #75877B;
+				font-size: 12px;
+				border: none;
+				}
+
+				QLineEdit#campoBusqueda {
+				background-color: #F8FBF9;
+				color: #193A29;
+				border: 1px solid #C7DCCF;
+				border-radius: 9px;
+				padding: 10px;
+				font-size: 13px;
+				}
+
+				QLineEdit#campoBusqueda:focus {
+				border: 2px solid #259B60;
+				background-color: #FFFFFF;
+				}
+
+				QPushButton {
+				background-color: #E8F4EC;
+				color: #20573B;
+				border: 1px solid #C7DCCF;
+				border-radius: 8px;
+				padding: 9px 14px;
+				font-weight: bold;
+				}
+
+				QPushButton:hover {
+				background-color: #D7EEDF;
+				}
+
+				QPushButton:pressed {
+				background-color: #CBEAD7;
+				}
+
+				QTableWidget#tablaHistorial {
+				background-color: #FFFFFF;
+				alternate-background-color: #F3F9F5;
+				color: #263F30;
+				border: 1px solid #E2EBE5;
+				border-radius: 7px;
+				gridline-color: #E8F0EA;
+				selection-background-color: #CBEAD7;
+				selection-color: #173C29;
+				font-size: 13px;
+				}
+
+				QHeaderView::section {
+				background-color: #E6F2E9;
+				color: #20573B;
+				font-weight: bold;
+				padding: 11px;
+				border: none;
+				border-bottom: 1px solid #CEDFD3;
+				}
+
+				QTableWidget::item {
+				padding: 8px;
+				}
+
+				QStatusBar {
+				background-color: #F2F6F3;
+				color: #667B6C;
+				}
+			</string>
+		</property>
+
+		<widget class="QWidget" name="centralwidget">
+			<layout class="QVBoxLayout" name="layoutPrincipal">
+				<property name="spacing">
+					<number>18</number>
+				</property>
+				<property name="leftMargin">
+					<number>24</number>
+				</property>
+				<property name="topMargin">
+					<number>24</number>
+				</property>
+				<property name="rightMargin">
+					<number>24</number>
+				</property>
+				<property name="bottomMargin">
+					<number>24</number>
+				</property>
+
+				<!-- Encabezado principal :joz1303 -->
+				<item>
+					<widget class="QFrame" name="encabezado">
+						<property name="minimumSize">
+							<size>
+								<width>0</width>
+								<height>112</height>
+							</size>
+						</property>
+						<layout class="QVBoxLayout" name="layoutEncabezado">
+							<property name="leftMargin">
+								<number>24</number>
+							</property>
+							<property name="rightMargin">
+								<number>24</number>
+							</property>
+							<item>
+								<widget class="QLabel" name="tituloPrincipal">
+									<property name="text">
+										<string>LA PULPE  |  Historial de ventas</string>
+									</property>
+								</widget>
+							</item>
+							<item>
+								<widget class="QLabel" name="subtitulo">
+									<property name="text">
+										<string>Consulta y administra el registro de tus ventas</string>
+									</property>
+								</widget>
+							</item>
+						</layout>
+					</widget>
+				</item>
+
+				<!-- Panel del buscador :joz1303 -->
+				<item>
+					<widget class="QFrame" name="panelBusqueda">
+						<layout class="QVBoxLayout" name="layoutBusqueda">
+							<property name="spacing">
+								<number>10</number>
+							</property>
+							<property name="leftMargin">
+								<number>20</number>
+							</property>
+							<property name="topMargin">
+								<number>18</number>
+							</property>
+							<property name="rightMargin">
+								<number>20</number>
+							</property>
+							<property name="bottomMargin">
+								<number>18</number>
+							</property>
+
+							<item>
+								<widget class="QLabel" name="tituloBusqueda">
+									<property name="text">
+										<string>Buscar una venta</string>
+									</property>
+								</widget>
+							</item>
+
+							<item>
+								<widget class="QLabel" name="descripcionBusqueda">
+									<property name="text">
+										<string>Introduce el identificador de la venta que deseas consultar.</string>
+									</property>
+								</widget>
+							</item>
+
+							<item>
+								<widget class="QLineEdit" name="campoBusqueda">
+									<property name="minimumSize">
+										<size>
+											<width>0</width>
+											<height>46</height>
+										</size>
+									</property>
+									<property name="placeholderText">
+										<string>Buscar venta por ID...</string>
+									</property>
+									<property name="clearButtonEnabled">
+										<bool>true</bool>
+									</property>
+								</widget>
+							</item>
+
+							<item>
+								<layout class="QHBoxLayout" name="layoutAcciones">
+									<property name="spacing">
+										<number>10</number>
+									</property>
+									<item>
+										<widget class="QPushButton" name="botonActualizar">
+											<property name="text">
+												<string>Actualizar historial</string>
+											</property>
+										</widget>
+									</item>
+									<item>
+										<widget class="QPushButton" name="botonTicketTxt">
+											<property name="text">
+												<string>Comprobante TXT</string>
+											</property>
+										</widget>
+									</item>
+									<item>
+										<widget class="QPushButton" name="botonTicketHtml">
+											<property name="text">
+												<string>Comprobante HTML</string>
+											</property>
+										</widget>
+									</item>
+								</layout>
+							</item>
+						</layout>
+					</widget>
+				</item>
+
+				<!-- Panel del historial de ventas :joz1303 -->
+				<item>
+					<widget class="QFrame" name="panelTabla">
+						<property name="sizePolicy">
+							<sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+								<horstretch>0</horstretch>
+								<verstretch>0</verstretch>
+							</sizepolicy>
+						</property>
+
+						<layout class="QVBoxLayout" name="layoutTabla">
+							<property name="spacing">
+								<number>14</number>
+							</property>
+							<property name="leftMargin">
+								<number>20</number>
+							</property>
+							<property name="topMargin">
+								<number>20</number>
+							</property>
+							<property name="rightMargin">
+								<number>20</number>
+							</property>
+							<property name="bottomMargin">
+								<number>20</number>
+							</property>
+
+							<item>
+								<widget class="QLabel" name="tituloTabla">
+									<property name="text">
+										<string>Registro de ventas</string>
+									</property>
+								</widget>
+							</item>
+
+							<item>
+								<widget class="QTableWidget" name="tablaHistorial">
+									<property name="alternatingRowColors">
+										<bool>true</bool>
+									</property>
+									<property name="selectionBehavior">
+										<enum>QAbstractItemView::SelectRows</enum>
+									</property>
+									<property name="rowCount">
+										<number>0</number>
+									</property>
+									<property name="columnCount">
+										<number>4</number>
+									</property>
+									<column>
+										<property name="text">
+											<string>ID</string>
+										</property>
+									</column>
+									<column>
+										<property name="text">
+											<string>Fecha</string>
+										</property>
+									</column>
+									<column>
+										<property name="text">
+											<string>Total</string>
+										</property>
+									</column>
+									<column>
+										<property name="text">
+											<string>Pagado</string>
+										</property>
+									</column>
+								</widget>
+							</item>
+						</layout>
+					</widget>
+				</item>
+			</layout>
+		</widget>
+
+		<widget class="QStatusBar" name="statusbar"/>
+	</widget>
+
+	<resources/>
+	<connections/>
+</ui>
