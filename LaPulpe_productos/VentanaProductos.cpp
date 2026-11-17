@@ -6,6 +6,7 @@
 #include <QMessageBox>
 #include <QFile>
 #include <QString>
+#include <cmath>
 
 VentanaProductos::VentanaProductos(const std::string& ruta) : rutaArchivo(ruta) {
 	crearPantalla();
@@ -86,10 +87,12 @@ void VentanaProductos::cargarDatos() {
 	gestor.setProductos(lista);
 }
 
-void VentanaProductos::guardarDatos() {
+bool VentanaProductos::guardarDatos() {
 	if (!almacen.guardar(rutaArchivo, gestor.getProductos())) {
 		mostrarError("No se pudo guardar el archivo de productos.");
+		return false;
 	}
+	return true;
 }
 
 void VentanaProductos::mostrarTabla() {
@@ -172,7 +175,7 @@ void VentanaProductos::agregarProducto() {
 	bool existenciaOk = false;
 	double precio = txtPrecio->text().toDouble(&precioOk);
 	int existencia = txtExistencia->text().toInt(&existenciaOk);
-	if (!precioOk || precio <= 0) {
+	if (!precioOk || !std::isfinite(precio) || precio <= 0) {
 		mostrarError("El precio debe ser un numero mayor que cero.");
 		return;
 	}
@@ -189,8 +192,8 @@ void VentanaProductos::agregarProducto() {
 		mostrarError("No se pudo agregar el producto.");
 		return;
 	}
-	guardarDatos();
 	mostrarTabla();
+	if (!guardarDatos()) return;
 	mostrarMensaje("Producto agregado.");
 }
 
@@ -211,10 +214,12 @@ void VentanaProductos::modificarProducto() {
 	}
 
 	std::string codigo = p->getCodigo();
-	gestor.modificarNombre(codigo, nombre);
-	gestor.modificarPrecio(codigo, precio);
-	guardarDatos();
+	if (!gestor.modificarNombre(codigo, nombre) || !gestor.modificarPrecio(codigo, precio)) {
+		mostrarError("No se pudo modificar el producto.");
+		return;
+	}
 	mostrarTabla();
+	if (!guardarDatos()) return;
 	mostrarMensaje("Producto modificado.");
 }
 
@@ -229,9 +234,12 @@ void VentanaProductos::ingresarMercaderia() {
 		return;
 	}
 
-	gestor.ingresaMerca(p->getCodigo(), cantidad);
-	guardarDatos();
+	if (!gestor.ingresaMerca(p->getCodigo(), cantidad)) {
+		mostrarError("No se pudo ingresar mercaderia. Revise la cantidad.");
+		return;
+	}
 	mostrarTabla();
+	if (!guardarDatos()) return;
 	txtCantidad->clear();
 	mostrarMensaje("Mercaderia ingresada.");
 }
@@ -244,8 +252,11 @@ void VentanaProductos::desactivarProducto() {
 		this, "Desactivar", "Desea desactivar el producto " + QString::fromStdString(p->getNombre()) + "?");
 	if (respuesta != QMessageBox::Yes) return;
 
-	gestor.desactivar(p->getCodigo());
-	guardarDatos();
+	if (!gestor.desactivar(p->getCodigo())) {
+		mostrarError("No se pudo desactivar el producto.");
+		return;
+	}
 	mostrarTabla();
+	if (!guardarDatos()) return;
 	mostrarMensaje("Producto desactivado.");
 }
