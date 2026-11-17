@@ -109,6 +109,8 @@
     <ClCompile Include="LaPulpe_productos\Producto.cpp" />
     <ClCompile Include="LaPulpe_productos\VentanaProductos.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ServicioVenta.cpp" />
+    <ClCompile Include="VentanaVentas.cpp" />
     <ClCompile Include="ModuloUsuarios\AplicacionUsuarios.cpp" />
     <ClCompile Include="ModuloUsuarios\Autenticacion.cpp" />
     <ClCompile Include="ModuloUsuarios\Clave.cpp" />
@@ -122,6 +124,9 @@
     <ClInclude Include="LaPulpe_productos\GestorProductos.h" />
     <ClInclude Include="LaPulpe_productos\Producto.h" />
     <ClInclude Include="LaPulpe_productos\VentanaProductos.h" />
+    <ClInclude Include="InicioLaPulpe.h" />
+    <ClInclude Include="ServicioVenta.h" />
+    <ClInclude Include="VentanaVentas.h" />
     <ClInclude Include="ModuloUsuarios\AplicacionUsuarios.h" />
     <ClInclude Include="ModuloUsuarios\Autenticacion.h" />
     <ClInclude Include="ModuloUsuarios\Clave.h" />

@@ -26,6 +26,11 @@ target_include_directories(productos PUBLIC LaPulpe_productos)
 if(CONSTRUIR_VENTANA)
     add_executable(LaPulpe
         main.cpp
+        InicioLaPulpe.h
+        VentanaVentas.cpp
+        VentanaVentas.h
+        ServicioVenta.cpp
+        ServicioVenta.h
         LaPulpe_productos/VentanaProductos.cpp
         LaPulpe_productos/VentanaProductos.h
         LaPulpe_productos/AlmacenProductos.cpp
