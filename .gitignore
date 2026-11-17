@@ -1,20 +1,83 @@
-.vs/
-.vscode/
-.idea/
-x64/
-Debug/
-Release/
-build/
-cmake-build-*/
-CMakeFiles/
-CMakeCache.txt
-*.user
+
+## =====================================
+## .gitignore - La Pulpe
+## C++ / Qt / Visual Studio / CMake
+## =====================================
+
+# Archivos binarios y temporales
+*.obj
+*.exe
+*.pdb
+*.o
+*.idb
+*.ilk
+*.tlh
+*.tli
+*.pch
+*.exp
+*.lib
+*.dll
+*.vspscc
+*.vssscc
+
+# Archivos de precompilador y caché
+*.aps
+*.ncb
+*.sdf
+*.opensdf
+*.cachefile
+*.VC.db
+*.VC.opendb
 *.ipch
 *.sqlite
 *.vsidx
 *.db
-*.obj
-*.o
-*.exe
-*.pdb
+
+# Carpetas generadas automáticamente
+[Bb]in/
+[Dd]ebug*/
+[Rr]elease*/
+[xX]64/
+[xX]86/
+[Oo]bj/
+[Oo]ut/
+ipch/
+
+# Archivos de usuario y configuración local
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+
+# Configuración local de Visual Studio
+.vs/
+.vscode/
+.idea/
+
+# Archivos generados por CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+build/
+cmake-build-*/
+out/
+
+# Archivos generados por pruebas
+*.tlog
+TestResults/
+*.coverage
+*.coveragexml
 prueba_productos
+
+# Otros archivos temporales
+*.tmp
+*.log
+*.bak
+
+# Archivos del sistema
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
