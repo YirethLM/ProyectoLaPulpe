@@ -1,5 +1,7 @@
+
 ## =====================================
-## .gitignore para aplicación C++ en Visual Studio
+## .gitignore - La Pulpe
+## C++ / Qt / Visual Studio / CMake
 ## =====================================
 
 # Archivos binarios y temporales
@@ -9,25 +11,27 @@
 *.o
 *.idb
 *.ilk
-*.json
 *.tlh
 *.tli
 *.pch
 *.exp
 *.lib
 *.dll
-*.log
 *.vspscc
 *.vssscc
 
-# Archivos de precompilador y cache
+# Archivos de precompilador y caché
 *.aps
 *.ncb
 *.sdf
 *.opensdf
 *.cachefile
 *.VC.db
-*.VC.VC.opendb
+*.VC.opendb
+*.ipch
+*.sqlite
+*.vsidx
+*.db
 
 # Carpetas generadas automáticamente
 [Bb]in/
@@ -37,24 +41,19 @@
 [xX]86/
 [Oo]bj/
 [Oo]ut/
-[ipch]/
-*.ipch
+ipch/
 
 # Archivos de usuario y configuración local
 *.user
 *.userosscache
 *.suo
 *.sln.docstates
-*.VC.db
-*.VC.opendb
 
-# Configuración de Visual Studio y dependencias
+# Configuración local de Visual Studio
 .vs/
 .vscode/
-*.VC.db
-*.VC.opendb
 
-# Archivos CMake (si el proyecto usa CMake)
+# Archivos generados por CMake
 CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
@@ -68,7 +67,7 @@ TestResults/
 *.coverage
 *.coveragexml
 
-# Otros
+# Otros archivos temporales
 *.tmp
 *.log
 *.bak
