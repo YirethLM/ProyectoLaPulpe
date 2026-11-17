@@ -1,11 +1,16 @@
+
 #include <QApplication>
 #include "VentanaProductos.h"
+#include "ModuloUsuarios/AplicacionUsuarios.h"
 
 int main(int argc, char* argv[]) {
-	QApplication app(argc, argv);
+    QApplication app(argc, argv);
 
-	VentanaProductos ventana("productos.json");
-	ventana.show();
+    app.setOrganizationName("LaPulpe");
+    app.setApplicationName("LaPulpe");
+    app.setQuitOnLastWindowClosed(false);
 
-	return app.exec();
+    return ejecutarLaPulpe([]() -> QWidget* {
+        return new VentanaProductos("productos.json");
+        });
 }
