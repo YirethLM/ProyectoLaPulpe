@@ -92,15 +92,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\AlmacenProductos.cpp" />
+    <ClCompile Include="..\..\LaPulpe_productos\AlmacenProductos.cpp" />
     <ClCompile Include="..\..\AlmacenVentas.cpp" />
     <ClCompile Include="..\..\GestorHistorial.cpp" />
-    <ClCompile Include="..\..\GestorProductos.cpp" />
-    <ClCompile Include="..\..\Producto.cpp" />
+    <ClCompile Include="..\..\LaPulpe_productos\GestorProductos.cpp" />
+    <ClCompile Include="..\..\LaPulpe_productos\Producto.cpp" />
     <ClCompile Include="..\..\TicketHtml.cpp" />
     <ClCompile Include="..\..\TicketTxt.cpp" />
     <ClCompile Include="..\..\Venta.cpp" />
-    <ClCompile Include="..\..\VentanaProductos.cpp" />
+    <ClCompile Include="..\..\LaPulpe_productos\VentanaProductos.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="VentanaHistorial.cpp" />
   </ItemGroup>

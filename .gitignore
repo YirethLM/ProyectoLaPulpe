@@ -52,6 +52,7 @@ ipch/
 # Configuración local de Visual Studio
 .vs/
 .vscode/
+.idea/
 
 # Archivos generados por CMake
 CMakeFiles/
@@ -59,6 +60,7 @@ CMakeCache.txt
 cmake_install.cmake
 Makefile
 build/
+cmake-build-*/
 out/
 
 # Archivos generados por pruebas
@@ -66,6 +68,7 @@ out/
 TestResults/
 *.coverage
 *.coveragexml
+prueba_productos
 
 # Otros archivos temporales
 *.tmp

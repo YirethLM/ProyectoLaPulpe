@@ -66,11 +66,13 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <PreprocessorDefinitions>QT_NO_DEPRECATED_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)LaPulpe_productos;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <PreprocessorDefinitions>QT_NO_DEPRECATED_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(ProjectDir)LaPulpe_productos;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
@@ -102,17 +104,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AlmacenProductos.cpp" />
-    <ClCompile Include="GestorProductos.cpp" />
+    <ClCompile Include="LaPulpe_productos\AlmacenProductos.cpp" />
+    <ClCompile Include="LaPulpe_productos\GestorProductos.cpp" />
+    <ClCompile Include="LaPulpe_productos\Producto.cpp" />
+    <ClCompile Include="LaPulpe_productos\VentanaProductos.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Producto.cpp" />
-    <ClCompile Include="VentanaProductos.cpp" />
+    <ClCompile Include="ModuloUsuarios\AplicacionUsuarios.cpp" />
+    <ClCompile Include="ModuloUsuarios\Autenticacion.cpp" />
+    <ClCompile Include="ModuloUsuarios\Clave.cpp" />
+    <ClCompile Include="ModuloUsuarios\GestorUsuarios.cpp" />
+    <ClCompile Include="ModuloUsuarios\Usuario.cpp" />
+    <ClCompile Include="ModuloUsuarios\VentanaLogin.cpp" />
+    <ClCompile Include="ModuloUsuarios\VentanaUsuarios.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AlmacenProductos.h" />
-    <ClInclude Include="GestorProductos.h" />
-    <ClInclude Include="Producto.h" />
-    <ClInclude Include="VentanaProductos.h" />
+    <ClInclude Include="LaPulpe_productos\AlmacenProductos.h" />
+    <ClInclude Include="LaPulpe_productos\GestorProductos.h" />
+    <ClInclude Include="LaPulpe_productos\Producto.h" />
+    <ClInclude Include="LaPulpe_productos\VentanaProductos.h" />
+    <ClInclude Include="ModuloUsuarios\AplicacionUsuarios.h" />
+    <ClInclude Include="ModuloUsuarios\Autenticacion.h" />
+    <ClInclude Include="ModuloUsuarios\Clave.h" />
+    <ClInclude Include="ModuloUsuarios\GestorUsuarios.h" />
+    <ClInclude Include="ModuloUsuarios\Usuario.h" />
+    <ClInclude Include="ModuloUsuarios\VentanaLogin.h" />
+    <ClInclude Include="ModuloUsuarios\VentanaUsuarios.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

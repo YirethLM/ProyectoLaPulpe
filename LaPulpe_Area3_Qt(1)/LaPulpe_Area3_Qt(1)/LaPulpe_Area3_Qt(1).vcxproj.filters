@@ -23,15 +23,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\AlmacenProductos.cpp"><Filter>Source Files</Filter></ClCompile>
+    <ClCompile Include="..\..\LaPulpe_productos\AlmacenProductos.cpp"><Filter>Source Files</Filter></ClCompile>
     <ClCompile Include="..\..\AlmacenVentas.cpp"><Filter>Source Files</Filter></ClCompile>
     <ClCompile Include="..\..\GestorHistorial.cpp"><Filter>Source Files</Filter></ClCompile>
-    <ClCompile Include="..\..\GestorProductos.cpp"><Filter>Source Files</Filter></ClCompile>
-    <ClCompile Include="..\..\Producto.cpp"><Filter>Source Files</Filter></ClCompile>
+    <ClCompile Include="..\..\LaPulpe_productos\GestorProductos.cpp"><Filter>Source Files</Filter></ClCompile>
+    <ClCompile Include="..\..\LaPulpe_productos\Producto.cpp"><Filter>Source Files</Filter></ClCompile>
     <ClCompile Include="..\..\TicketHtml.cpp"><Filter>Source Files</Filter></ClCompile>
     <ClCompile Include="..\..\TicketTxt.cpp"><Filter>Source Files</Filter></ClCompile>
     <ClCompile Include="..\..\Venta.cpp"><Filter>Source Files</Filter></ClCompile>
-    <ClCompile Include="..\..\VentanaProductos.cpp"><Filter>Source Files</Filter></ClCompile>
+    <ClCompile Include="..\..\LaPulpe_productos\VentanaProductos.cpp"><Filter>Source Files</Filter></ClCompile>
     <ClCompile Include="..\..\main.cpp"><Filter>Source Files</Filter></ClCompile>
   </ItemGroup>
 </Project>

@@ -1,6 +1,6 @@
 
 #include <QApplication>
-#include "VentanaProductos.h"
+#include "LaPulpe_productos/VentanaProductos.h"
 #include "ModuloUsuarios/AplicacionUsuarios.h"
 
 int main(int argc, char* argv[]) {
